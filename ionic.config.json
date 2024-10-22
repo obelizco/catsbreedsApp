@@ -1,0 +1,7 @@
+{
+  "name": "cats",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
