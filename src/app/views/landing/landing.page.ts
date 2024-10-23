@@ -14,15 +14,22 @@ import { DetailPage } from '../detail/detail.page';
 export class LandingPage implements OnInit {
   cats: ICat[] = [];
   filteredCats: ICat[] = [];
-  selectedItem: ICat | undefined;
-  raza: string = ''
+  raza: string = '';
   constructor(private _catsService: CatsService,
-      private _modalCtrl:ModalController,
+    private _modalCtrl: ModalController,
   ) { }
 
   ngOnInit() {
-    this.getCatsWithImages();
+    this.getBreeds();
   }
+
+  getBreeds(): void {
+    this._catsService.getBreeds().subscribe((data:ICat[]) => {
+      this.filteredCats = data;
+      this.cats = data;
+    });
+  }
+
 
   search(event: any) {
     const query = event.target.value.toLowerCase();
@@ -31,27 +38,12 @@ export class LandingPage implements OnInit {
         cat.name.toLowerCase().includes(query)
       );
     } else {
-      this.filteredCats = [...this.cats];
+      this.filteredCats = [...this.cats]; 
     }
   }
 
-  getCatsWithImages(): void {
-    this._catsService.getBreedsWithImages().subscribe(
-      (response: ICat[]) => {
-        if (Array.isArray(response)) {
-          this.cats = response;
-          this.filteredCats = response;
-        } else {
-          // console.error('La respuesta no es un array');
-        }
-      },
-      (error) => {
-        // console.error('Error:', error);
-      }
-    );
-  }
-
- async redirectDetail(detail:ICat):Promise<void> {
+  
+  async redirectDetail(detail: ICat): Promise<void> {
     const modal = await this._modalCtrl.create({
       component: DetailPage,
       componentProps: { detail }

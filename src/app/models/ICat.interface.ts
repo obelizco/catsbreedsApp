@@ -36,10 +36,17 @@ export interface ICat {
     wikipedia_url:      string;
     hypoallergenic:     number;
     reference_image_id: string;
-    image?:             string;
+    image:              Image;
 }
 
 export interface Weight {
     imperial: string;
     metric:   string;
+}
+
+export interface Image{
+    height: number;
+    id:     string;
+    url:    string;
+    width:  number;
 }

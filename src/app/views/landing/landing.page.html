@@ -21,7 +21,7 @@
             </div>
           </ng-template>
           <ng-template pTemplate="p-card-content">
-            <img alt="Cat Image" [src]="cat.image" *ngIf="cat.image" class="border-round-sm"/>
+            <img alt="Cat Image" [src]="cat.image?.url" *ngIf="cat.image?.url" class="border-round-sm"/>
           </ng-template>
           <ng-template pTemplate="footer">
             <div class="flex flex-row flex-row justify-content-between">
@@ -31,7 +31,9 @@
           </ng-template>
         </p-card>
       </div>
-      
     </div>
   </section>
-</ion-content>
+
+  </ion-content>
+
+

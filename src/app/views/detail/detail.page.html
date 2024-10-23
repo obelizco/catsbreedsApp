@@ -7,7 +7,7 @@
   </ion-header>
   <section class="flex flex-column gap-3 p-3">
     <div class="flex max-h-15rem">
-      <img alt="Cat Image" [src]="detail.image" *ngIf="detail.image" class="border-round-sm " />
+      <img alt="Cat Image" [src]="detail.image.url" *ngIf="detail.image.url" class="border-round-sm " />
     </div>
     <div class="scroll">
       <h5><b>Description</b></h5>
