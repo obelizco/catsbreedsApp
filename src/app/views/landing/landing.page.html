@@ -1,0 +1,37 @@
+<ion-content>
+  <section class="p-3">
+    <div class="flex justify-content-center">
+      <h1>
+        Catbreeds
+      </h1>
+    </div>
+    <div class="flex flex-column justify-content-center w-full gap-3">
+      <span class="p-input-icon-right w-full">
+        <input type="text" pInputText [(ngModel)]="raza" (input)="search($event)" placeholder="Buscar" class="w-full text-black-alpha-90" />
+        <i class="pi pi-search"></i>
+      </span>
+  
+      <div>
+        <p-card *ngFor="let cat of filteredCats" 
+        [style]="{ width: '100%'}" styleClass="mb-3">
+          <ng-template pTemplate="header">
+            <div class="flex flex-row justify-content-between pl-4 pr-4">
+              <h3>{{ cat.name }} </h3>
+              <h3 class="cursor-pointer underline text-blue-600"  (click)="redirectDetail(cat)">Más...</h3>
+            </div>
+          </ng-template>
+          <ng-template pTemplate="p-card-content">
+            <img alt="Cat Image" [src]="cat.image" *ngIf="cat.image" class="border-round-sm"/>
+          </ng-template>
+          <ng-template pTemplate="footer">
+            <div class="flex flex-row flex-row justify-content-between">
+              <h3>{{ cat.origin }} </h3>
+              <h3>{{ cat.intelligence }} </h3>
+            </div>
+          </ng-template>
+        </p-card>
+      </div>
+      
+    </div>
+  </section>
+</ion-content>

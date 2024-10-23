@@ -1,0 +1,39 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <div class="flex flex-row w-full">
+        <p-button icon="pi pi-angle-left" [rounded]="true" [text]="true" (click)="close()" />
+        <ion-title class="text-center">{{detail.name}}</ion-title>
+    </div>
+  </ion-header>
+  <section class="flex flex-column gap-3 p-3">
+    <div class="flex max-h-15rem">
+      <img alt="Cat Image" [src]="detail.image" *ngIf="detail.image" class="border-round-sm " />
+    </div>
+    <div class="scroll">
+      <h5><b>Description</b></h5>
+      <p class="text-justify">{{detail.description}}</p>
+      <p><b>Country</b>: {{detail.origin}}</p>
+
+      <h5><b>Characteristics</b></h5>
+      <div class="flex flex-row gap-3 ">
+        <p class="w-4">Intelligence</p>
+        <p-rating class="flex  align-content-center justify-content-center w-8"  [(ngModel)]="detail.intelligence" [readonly]="true" [cancel]="false" />
+      </div>
+      <div class="flex flex-row gap-3 ">
+        <p class="w-4">Adaptability</p>
+        <p-rating class="flex  align-content-center justify-content-center w-8"  [(ngModel)]="detail.adaptability" [readonly]="true" [cancel]="false" />
+      </div>
+      <div class="flex flex-row gap-3 ">
+        <p class="w-4">Dog friendly</p>
+        <p-rating class="flex align-content-center justify-content-center w-8"  [(ngModel)]="detail.dog_friendly" [readonly]="true" [cancel]="false" />
+      </div>
+
+      <p>Temperament: {{detail.temperament}}</p>
+
+      <p><b>Links</b>:</p>
+      <p>Wikipedia Url: <a href="{{detail.wikipedia_url}}">{{detail.wikipedia_url}}</a></p>
+      <p>Hospitals Url: <a href="{{detail.vcahospitals_url}}">{{detail.vcahospitals_url}}</a></p>
+
+    </div>
+  </section>
+</ion-content>
