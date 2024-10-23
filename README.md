@@ -38,9 +38,12 @@ _Advantage. 🎉
 Run  `ionic build --prod`  to build the project. Push the www folder to your hosting service.
 
 Android
-Run `ionic capacitor add Android`
-Run `ionic capacitor run android`
+
+Run `ionic capacitor add Android`.
+Run `ionic capacitor run android`.
+
 iOS
-Run  `ionic capacitor add ios`
-Run `ionic capacitor run ios`
+
+Run  `ionic capacitor add ios`.
+Run `ionic capacitor run ios`.
 
