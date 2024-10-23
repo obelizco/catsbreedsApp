@@ -40,10 +40,12 @@ Run  `ionic build --prod`  to build the project. Push the www folder to your hos
 Android
 
 Run `ionic capacitor add Android`.
+
 Run `ionic capacitor run android`.
 
 iOS
 
 Run  `ionic capacitor add ios`.
+
 Run `ionic capacitor run ios`.
 
